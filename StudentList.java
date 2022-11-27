@@ -6,7 +6,7 @@ public class StudentList {
 
     public static void main(String[] args) {
 
-        // Check arguments
+        // Check arguments on this code
         
         if (args.length==0){
             System.out.println("You must have to put at least one argument.");
