@@ -6,27 +6,29 @@ public class StudentList {
 
     public static void main(String[] args) {
 
-        // Check arguments on this code
-        
+        // invalid arguments checking
+
+// Check for user pass no argument
         if (args.length==0){
-            System.out.println("You must have to put at least one argument.");
+            System.out.println("You have to put at least one argument.");
         }
 
         else if (args.length>1){
-            System.out.println("Multipled arguments found ! You must have to put exactly one argument to run this program.");
+            System.out.println("Multiplied arguments found!! You must put one argument for run this program.");
 
         }
-
+// Check for user pass more than 1 argument
         else if (args[0].length()>1){
-            System.out.println("Please pass the correct argument.");
+            System.out.println("Pass the correct argument.");
 
         }
 
+//Check if user pass 'a' to see the students list.
 
         else if (args[0].equals("a")) {
 
             System.out.println("Loading data ...");
-
+// This method will create object of BufferReader and load lines in studentNames String Array. It is used to avoid repeatitive calling.
             try {
 
                 BufferedReader s = new BufferedReader(new InputStreamReader(new FileInputStream("students.txt")));
@@ -46,6 +48,7 @@ public class StudentList {
 
             System.out.println("Data Loaded.");
         }
+//Check if user pass 'r' to see a random student.
 
         else if (args[0].equals("r")) {
 
@@ -159,6 +162,7 @@ public class StudentList {
                     }
                 }
 
+                //Check if user pass '+' to add a student name
                 System.out.println(count + " word(s) found " + a.length);
             }
 
