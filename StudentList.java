@@ -2,15 +2,13 @@ import java.io.*;
 import java.text.*;
 import java.util.*;
 public class StudentList {
-	public static void main(String[] args) {
+	public static <String> void main(String[] args) {
 
 //		Check arguments
 		if(args[0].equals("a")) {
 			System.out.println("Loading data ...");			
 			try {
-			BufferedReader s = new BufferedReader(
-					new InputStreamReader(
-							new FileInputStream("students.txt"))); 
+			BufferedReader s = getReader();
 			String r = s.readLine();
 			String i[] = r.split(",");			
 			for(String j : i) { System.out.println(j); }
@@ -21,9 +19,7 @@ public class StudentList {
 		{
 			System.out.println("Loading data ...");			
 			try {
-			BufferedReader s = new BufferedReader(
-					new InputStreamReader(
-							new FileInputStream("students.txt"))); 
+			BufferedReader s = getReader();
 			String r = s.readLine();
 			System.out.println(r);
 			String i[] = r.split(",");	
@@ -36,9 +32,8 @@ public class StudentList {
 		else if(args[0].contains("+")){
 			System.out.println("Loading data ...");			
 			try {
-			BufferedWriter s = new BufferedWriter(
-					new FileWriter("students.txt", true));
-			String t = args[0].substring(1);
+				BufferedWriter s = getWriter();
+				String t = args[0].substring(1);
 	        Date d = new Date();
 	        String df = "dd/mm/yyyy-hh:mm:ss a";
 	        DateFormat dateFormat = new SimpleDateFormat(df);
@@ -53,9 +48,7 @@ public class StudentList {
 		{
 			System.out.println("Loading data ...");			
 			try {
-			BufferedReader s = new BufferedReader(
-					new InputStreamReader(
-							new FileInputStream("students.txt"))); 
+			BufferedReader s = getReader();
 			String r = s.readLine();
 			String i[] = r.split(",");	
 			boolean done = false;
@@ -73,9 +66,7 @@ public class StudentList {
 		{
 			System.out.println("Loading data ...");			
 			try {
-			BufferedReader s = new BufferedReader(
-					new InputStreamReader(
-							new FileInputStream("students.txt"))); 
+			BufferedReader s = getReader();
 			String D = s.readLine();
 			char a[] = D.toCharArray();			
 			boolean in_word = false;
@@ -91,5 +82,17 @@ public class StudentList {
 			} catch (Exception e){} 
 			System.out.println("Data Loaded.");				
 		}
+	}
+
+	private static BufferedWriter getWriter() {
+		BufferedWriter s = new BufferedWriter(
+				new FileWriter("students.txt", true));
+		return s;
+	}
+
+	private static BufferedReader getReader() {
+		return new BufferedReader(
+				new InputStreamReader(
+						new FileInputStream("students.txt")));
 	}
 }
