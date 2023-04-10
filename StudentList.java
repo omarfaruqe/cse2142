@@ -96,4 +96,5 @@ public class StudentList {
 				new InputStreamReader(
 						new FileInputStream("students.txt")));
 	}
+
 }
