@@ -23,8 +23,9 @@ public class StudentList {
 			String r = s.readLine();
 			System.out.println(r);
 			String i[] = r.split(",");	
-			Random x = new Random();
-				int y = x.nextInt();
+			
+
+				int y = (int) ((Math.random()) * 3);
 					System.out.println(i[y]);
 			} catch (Exception e){} 
 			System.out.println("Data Loaded.");			
