@@ -9,17 +9,16 @@ public class StudentList {
 
 	public static void Reader(){
 		try {
-			BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(constant.FileNmae)));
+			BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(constant.FileName)));
 			studentNames = bufferedReader.readLine();
 			names = studentNames.split(constant.split);
 		} catch(Exception e){
-
 		}
 	}
 
 	public static void Write(String updateText){
 		try {
-			BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(constant.FileNmae, false));
+			BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(constant.FileName, false));
 			bufferedWriter.flush();
 			bufferedWriter.write(updateText);
 			bufferedWriter.close();
@@ -27,13 +26,10 @@ public class StudentList {
 
 		}
 	}
-
 	public static void main(String[] args) {
-
 		if (args.length != 1) {
 			System.out.println(constant.Invalid);
 			System.exit(1);
-
 		}
 		if(args[0].equals(constant.showNames)) {
 			System.out.println(constant.loadingData);

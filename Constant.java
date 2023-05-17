@@ -8,7 +8,7 @@ public class Constant{
     public String notFound = "Not found!";
     public String wordsFound = " word(s) found";
     public String Invalid = "Invalid input";
-    public String FileNmae = "students.txt";
+    public String FileName = "/home/noob_coder/Desktop/cse2142/students.txt";
     public String split = ", ";
     public String showNames = "a";
     public String randomName = "r";
